@@ -1,68 +1,78 @@
+"use client"
+
 import Link from "next/link"
-import { ArrowRight, CheckCircle } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 export function FinalCTASection() {
-  const benefits = ["Acceso inmediato", "Sin comisiones ocultas", "Soporte 24/7", "Garantía de seguridad"]
+  const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section className="section-padding bg-gradient-to-br from-primary via-primary to-primary/80 text-primary-foreground relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-foreground/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="section-container relative z-10">
-        <div className="max-w-3xl mx-auto text-center space-y-8">
-          {/* Headline */}
-          <div className="space-y-4">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-              Comienza tu Viaje de Inversión Hoy
+    <section ref={ref} className="section-padding bg-background">
+      <div className="section-container">
+        <div
+          className={`grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl ${
+            isVisible ? "fade-in-up" : "opacity-0 translate-y-8"
+          }`}
+        >
+          {/* Left Column - Orange CTA */}
+          <div className="bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              Comienza a Encontrar tu Propiedad Perfecta Hoy
             </h2>
-            <p className="text-lg sm:text-xl opacity-90">
-              Únete a miles de inversores que ya están construyendo riqueza a través de bienes raíces tokenizados.
+            <p className="text-lg mb-8 opacity-90 leading-relaxed">
+              Únete a miles de inversores satisfechos que han encontrado sus propiedades soñadas con nuestra
+              plataforma de tokenización impulsada por blockchain
             </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/marketplace"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-background text-primary rounded-full font-semibold hover:bg-background/90 transition-all"
+              >
+                Comenzar
+                <ArrowRight size={20} />
+              </Link>
+              <Link
+                href="/como-funciona"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary-foreground text-primary-foreground rounded-full font-semibold hover:bg-primary-foreground/10 transition-all"
+              >
+                Programar Demo
+              </Link>
+            </div>
           </div>
 
-          {/* Benefits */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center gap-3 justify-center sm:justify-start">
-                <CheckCircle size={20} className="flex-shrink-0" />
-                <span className="text-sm sm:text-base">{benefit}</span>
-              </div>
-            ))}
-          </div>
+          {/* Right Column - Image with Overlay Card */}
+          <div className="relative min-h-[400px] lg:min-h-[500px]">
+            {/* Background Image */}
+            <img
+              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80"
+              alt="Propiedades"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Link
-              href="/contacto"
-              className="px-8 py-4 bg-primary-foreground text-primary rounded-full font-semibold hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2"
-            >
-              Solicitar Acceso
-              <ArrowRight size={20} />
-            </Link>
-            <Link
-              href="/marketplace"
-              className="px-8 py-4 border-2 border-primary-foreground text-primary-foreground rounded-full font-semibold hover:bg-primary-foreground/10 transition-colors inline-flex items-center justify-center gap-2"
-            >
-              Explorar Marketplace
-            </Link>
-          </div>
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70"></div>
 
-          {/* Trust Badge */}
-          <div className="pt-8 border-t border-primary-foreground/20">
-            <p className="text-sm opacity-80 mb-4">Confiado por inversores en 50+ países</p>
-            <div className="flex justify-center gap-4 flex-wrap">
-              {["ISO 27001", "SOC 2", "GDPR", "Blockchain Verified"].map((badge, index) => (
-                <div
-                  key={index}
-                  className="px-4 py-2 bg-primary-foreground/10 border border-primary-foreground/20 rounded-full text-xs font-medium"
+            {/* Floating Card */}
+            <div className="absolute inset-0 flex items-center justify-center p-8">
+              <div className="bg-card/95 backdrop-blur-sm border border-border rounded-2xl p-6 md:p-8 max-w-md shadow-xl">
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  ¿Listo para encontrar la inversión de tus sueños?
+                </h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Nuestra IA puede conectarte con propiedades tokenizadas que se ajusten perfectamente a tu estilo de
+                  inversión y presupuesto.
+                </p>
+                <Link
+                  href="/marketplace"
+                  className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
                 >
-                  {badge}
-                </div>
-              ))}
+                  Conoce más
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

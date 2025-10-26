@@ -46,22 +46,6 @@ export function HeroSection() {
               Ver Cómo Funciona
             </Link>
           </div>
-
-          {/* Stats */}
-          {/* <div className="grid grid-cols-3 gap-6 pt-8">
-            <div>
-              <p className="text-2xl sm:text-3xl font-bold text-primary">$500M+</p>
-              <p className="text-sm text-gray-300">Volumen Invertido</p>
-            </div>
-            <div>
-              <p className="text-2xl sm:text-3xl font-bold text-primary">15K+</p>
-              <p className="text-sm text-gray-300">Inversores Activos</p>
-            </div>
-            <div>
-              <p className="text-2xl sm:text-3xl font-bold text-primary">98%</p>
-              <p className="text-sm text-gray-300">Satisfacción</p>
-            </div>
-          </div> */}
         </div>
       </div>
 

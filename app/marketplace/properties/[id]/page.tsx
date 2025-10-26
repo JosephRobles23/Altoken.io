@@ -4,8 +4,6 @@ import Link from "next/link"
 import { ChevronLeft, ChevronRight, Info } from "lucide-react"
 import { motion } from "framer-motion"
 import { getPropertyById, propertiesData } from "@/lib/properties-data"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 
 export default function PropertyDetailPage({ params }: { params: Promise<{ id: string }> }) {
   // Use React.use() to unwrap the promise in a client component
@@ -41,7 +39,6 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
 
   return (
     <>
-      <Navbar />
       <main className="min-h-screen bg-background">
         {/* Breadcrumb */}
         <div className="bg-background border-b border-border">
@@ -230,7 +227,6 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
           </div>
         </div>
       </main>
-      <Footer />
     </>
   )
 }

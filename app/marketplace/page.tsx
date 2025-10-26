@@ -1,7 +1,5 @@
 "use client"
 import { useState } from "react"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 import { PropertyCard } from "@/components/ui/Card/property-card"
 import { propertiesData } from "@/lib/properties-data"
 import { motion } from "framer-motion"
@@ -22,7 +20,6 @@ export default function MarketplacePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       <main className="section-container section-padding">
         {/* Header */}
         <motion.div 
@@ -91,7 +88,6 @@ export default function MarketplacePage() {
           </motion.div>
         )}
       </main>
-      <Footer />
     </div>
   )
 }

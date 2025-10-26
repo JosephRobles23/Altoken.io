@@ -1,7 +1,12 @@
+"use client"
+
+import { InfiniteCarousel } from "@/components/ui/carousel/infinite-carousel"
+
 interface Partner {
   name: string
   category: string
   description: string
+  logo?: string
 }
 
 export function PartnersSection() {
@@ -15,6 +20,12 @@ export function PartnersSection() {
       name: "Global Real Estate",
       category: "Inmobiliario",
       description: "Selección y gestión de propiedades",
+    },
+    {
+      name: "Hedera Hashgraph",
+      category: "Blockchain",
+      description: "Red blockchain de alto rendimiento y sostenible",
+      logo: "partners/Hedera-Logo.jpg",
     },
     {
       name: "Legal Partners",
@@ -38,8 +49,11 @@ export function PartnersSection() {
     },
   ]
 
+  // Duplicar los partners para crear el efecto de loop infinito
+  const duplicatedPartners = [...partners, ...partners]
+
   return (
-    <section className="section-padding bg-primary/5">
+    <section className="section-padding bg-primary/5 overflow-hidden">
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
@@ -49,28 +63,62 @@ export function PartnersSection() {
           </p>
         </div>
 
-        {/* Partners Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="p-6 bg-card border border-border rounded-xl hover:border-primary/50 hover:shadow-lg transition-all"
-            >
-              {/* Logo Placeholder */}
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <div className="w-8 h-8 bg-primary/20 rounded"></div>
-              </div>
+        {/* Infinite Carousel */}
+        <div className="mb-16">
+          <InfiniteCarousel speed={70} itemWidth={320}>
+            {duplicatedPartners.map((partner, index) => (
+              <div
+                key={index}
+                className="group relative flex-shrink-0 w-[320px] h-[280px] border border-border rounded-xl hover:border-primary/50 hover:shadow-lg transition-all overflow-hidden"
+              >
+                {/* Background Image */}
+                {partner.logo ? (
+                  <>
+                    <div className="absolute inset-0">
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 pb-2"
+                      />
+                    </div>
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/70 to-background/85"></div>
+                  </>
+                ) : (
+                  <div className="absolute inset-0 bg-card"></div>
+                )}
 
-              {/* Content */}
-              <h3 className="font-semibold text-lg mb-1">{partner.name}</h3>
-              <p className="text-sm text-accent font-medium mb-3">{partner.category}</p>
-              <p className="text-sm text-muted-foreground">{partner.description}</p>
-            </div>
-          ))}
+                {/* Content */}
+                <div className="relative p-6 h-full flex flex-col">
+                  {/* Logo Icon (small version at top) */}
+                  {/* {partner.logo ? (
+                    <div className="h-10 mb-4 flex items-center">
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        className="h-full w-auto object-contain opacity-80"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                      <div className="w-8 h-8 bg-primary/20 rounded"></div>
+                    </div>
+                  )} */}
+
+                  {/* Text Content */}
+                  <div className="mt-auto">
+                    <h3 className="font-semibold text-lg mb-1 text-foreground">{partner.name}</h3>
+                    <p className="text-sm text-primary font-medium mb-3">{partner.category}</p>
+                    {/* <p className="text-sm text-muted-foreground leading-relaxed">{partner.description}</p> */}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </InfiniteCarousel>
         </div>
 
         {/* Partnership CTA */}
-        <div className="mt-16 p-8 bg-gradient-to-r from-primary to-accent/50 text-primary-foreground rounded-xl text-center">
+        <div className="p-8 bg-gradient-to-r from-primary to-accent/50 text-primary-foreground rounded-xl text-center">
           <h3 className="text-2xl font-bold mb-4">¿Interesado en Asociarse?</h3>
           <p className="mb-6 max-w-2xl mx-auto">Buscamos partners estratégicos para expandir nuestro ecosistema.</p>
           <button className="px-8 py-3 bg-primary-foreground text-primary rounded-full font-semibold hover:opacity-90 transition-opacity">

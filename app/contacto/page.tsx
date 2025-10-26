@@ -2,8 +2,6 @@
 
 import type React from "react"
 
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 import { useState } from "react"
 
 export default function ContactoPage() {
@@ -21,7 +19,6 @@ export default function ContactoPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       <main className="section-container section-padding">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-4xl font-bold mb-4">Contacto</h1>
@@ -68,7 +65,6 @@ export default function ContactoPage() {
           </form>
         </div>
       </main>
-      <Footer />
     </div>
   )
 }
