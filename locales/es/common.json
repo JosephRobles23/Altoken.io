@@ -1,0 +1,110 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "marketplace": "Marketplace",
+    "ecosystem": "Ecosistema",
+    "howItWorks": "Cómo Funciona",
+    "partners": "Socios",
+    "contact": "Contacto",
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse"
+  },
+  "hero": {
+    "title": "Invierte en el futuro inmobiliario",
+    "subtitle": "Tokenización de activos inmobiliarios",
+    "description": "Accede a oportunidades de inversión inmobiliaria fraccionada a través de la blockchain. Invierte desde cualquier lugar del mundo con total transparencia y seguridad.",
+    "getStarted": "Comenzar Ahora",
+    "learnMore": "Saber Más"
+  },
+  "stats": {
+    "totalInvestment": "Inversión Total",
+    "activeProjects": "Proyectos Activos",
+    "investors": "Inversores",
+    "averageReturn": "Retorno Promedio"
+  },
+  "globalPresence": {
+    "title": "Presencia Global",
+    "subtitle": "Conectando el mundo a través de la",
+    "tokenization": "tokenización",
+    "description": "Nuestra red global nos permite ofrecer soluciones de tokenización adaptadas a cada mercado local, construyendo puentes entre la innovación blockchain y las necesidades específicas de cada región.",
+    "countries": {
+      "mexico": "México",
+      "colombia": "Colombia",
+      "ecuador": "Ecuador",
+      "peru": "Perú",
+      "argentina": "Argentina"
+    },
+    "employees": "empleados",
+    "established": "Est."
+  },
+  "marketplace": {
+    "title": "Marketplace de Inversiones",
+    "subtitle": "Descubre oportunidades únicas",
+    "description": "Explora nuestra selección curada de propiedades tokenizadas con potencial de alto retorno.",
+    "viewAll": "Ver Todas",
+    "investNow": "Invertir Ahora",
+    "roi": "ROI",
+    "minInvestment": "Inversión Mínima",
+    "funded": "Financiado"
+  },
+  "whyInvest": {
+    "title": "¿Por qué invertir con nosotros?",
+    "subtitle": "Ventajas competitivas",
+    "accessibility": {
+      "title": "Accesibilidad",
+      "description": "Invierte desde $100 USD en propiedades premium que antes requerían millones."
+    },
+    "transparency": {
+      "title": "Transparencia Total",
+      "description": "Blockchain garantiza transparencia completa en todas las transacciones."
+    },
+    "liquidity": {
+      "title": "Liquidez Mejorada",
+      "description": "Tokens negociables que ofrecen mayor liquidez que la inversión inmobiliaria tradicional."
+    },
+    "diversification": {
+      "title": "Diversificación",
+      "description": "Diversifica tu portafolio con activos inmobiliarios de diferentes mercados."
+    }
+  },
+  "objectives": {
+    "title": "Nuestros Objetivos",
+    "subtitle": "Transformando la inversión inmobiliaria",
+    "democratize": {
+      "title": "Democratizar el Acceso",
+      "description": "Hacer que la inversión inmobiliaria sea accesible para todos, sin importar el capital inicial."
+    },
+    "transparency": {
+      "title": "Garantizar Transparencia",
+      "description": "Utilizar blockchain para proporcionar transparencia total en todas las transacciones."
+    },
+    "innovation": {
+      "title": "Impulsar la Innovación",
+      "description": "Liderar la transformación digital del sector inmobiliario con tecnología de vanguardia."
+    }
+  },
+  "testimonials": {
+    "title": "Lo que dicen nuestros inversores",
+    "subtitle": "Experiencias reales de nuestra comunidad"
+  },
+  "partners": {
+    "title": "Nuestros Socios",
+    "subtitle": "Colaboramos con las mejores empresas del sector"
+  },
+  "finalCta": {
+    "title": "Comienza tu journey de inversión hoy",
+    "subtitle": "Únete a miles de inversores que ya están construyendo su futuro financiero",
+    "description": "No esperes más para diversificar tu portafolio con activos inmobiliarios tokenizados. El futuro de la inversión está aquí.",
+    "getStarted": "Comenzar Ahora",
+    "learnMore": "Saber Más"
+  },
+  "footer": {
+    "description": "Plataforma líder en tokenización de activos inmobiliarios. Invierte en el futuro de los bienes raíces.",
+    "quickLinks": "Enlaces Rápidos",
+    "legal": "Legal",
+    "contact": "Contacto",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "allRightsReserved": "Todos los derechos reservados"
+  }
+}

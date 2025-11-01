@@ -3,20 +3,23 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import { useTranslation } from 'react-i18next'
 import { SignInDialog } from "@/components/auth/sign-in-dialog"
 import { SignUpDialog } from "@/components/auth/sign-up-dialog"
+import { LanguageSwitcher } from "@/components/ui/Navbar/language-switcher"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [showSignIn, setShowSignIn] = useState(false)
   const [showSignUp, setShowSignUp] = useState(false)
+  const { t } = useTranslation('common')
 
   const navLinks = [
-    { href: "/", label: "Inicio" },
-    { href: "/marketplace", label: "Marketplace" },
-    { href: "/como-funciona", label: "Cómo Funciona" },
-    { href: "/ecosistema", label: "Ecosistema" },
-    { href: "/socios", label: "Socios" },
+    { href: "/", label: t('navigation.home') },
+    { href: "/marketplace", label: t('navigation.marketplace') },
+    { href: "/como-funciona", label: t('navigation.howItWorks') },
+    { href: "/ecosistema", label: t('navigation.ecosystem') },
+    { href: "/socios", label: t('navigation.partners') },
   ]
 
   return (
@@ -46,14 +49,15 @@ export function Navbar() {
 
           {/* Auth Buttons */}
           <div className="hidden md:flex items-center gap-3">
+            <LanguageSwitcher />
             <button
               onClick={() => setShowSignIn(true)}
               className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
-              Iniciar Sesión
+              {t('navigation.signIn')}
             </button>
             <button onClick={() => setShowSignUp(true)} className="btn-primary text-sm">
-              Registrarse
+              {t('navigation.signUp')}
             </button>
           </div>
 
@@ -80,6 +84,9 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="px-4 py-2">
+              <LanguageSwitcher />
+            </div>
             <button
               onClick={() => {
                 setShowSignIn(true)
@@ -87,7 +94,7 @@ export function Navbar() {
               }}
               className="block w-full px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-lg transition-colors text-left"
             >
-              Iniciar Sesión
+              {t('navigation.signIn')}
             </button>
             <button
               onClick={() => {
@@ -96,7 +103,7 @@ export function Navbar() {
               }}
               className="block w-full px-4 py-2 btn-primary text-sm text-center"
             >
-              Registrarse
+              {t('navigation.signUp')}
             </button>
           </div>
         )}

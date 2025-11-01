@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 import Image from "next/image";
 import "./global-maps.css";
 import MapGlobal from "../../../public/Global-Map/MAP.webp"
@@ -28,11 +29,12 @@ interface CountryData {
 
 export const BoxMap = () => {
     const [activeCountry, setActiveCountry] = useState<string | null>(null);
+    const { t } = useTranslation('common');
 
     const countries: CountryData[] = [
         {
             id: "ecuador",
-            name: "Ecuador",
+            name: t('globalPresence.countries.ecuador'),
             flag: ecuadorFlag,
             office: officeEcuador,
             position: { top: "305px", left: "25px" },
@@ -41,7 +43,7 @@ export const BoxMap = () => {
         },
         {
             id: "peru",
-            name: "Peru",
+            name: t('globalPresence.countries.peru'),
             flag: peruFlag,
             office: officePeru,
             position: { top: "370px", left: "80px" },
@@ -50,7 +52,7 @@ export const BoxMap = () => {
         },
         {
             id: "argentina",
-            name: "Argentina",
+            name: t('globalPresence.countries.argentina'),
             flag: argentinaFlag,
             office: officeArgentina,
             position: { top: "350px", left: "232px" },
@@ -59,7 +61,7 @@ export const BoxMap = () => {
         },
         {
             id: "mexico",
-            name: "Mexico",
+            name: t('globalPresence.countries.mexico'),
             flag: mexicoFlag,
             office: officeMexico,
             position: { top: "200px", left: "30px" },
@@ -68,7 +70,7 @@ export const BoxMap = () => {
         },
         {
             id: "colombia",
-            name: "Colombia",
+            name: t('globalPresence.countries.colombia'),
             flag: colombiaFlag,
             office: officeColombia,
             position: { top: "250px", left: "185px" },
@@ -124,8 +126,8 @@ export const BoxMap = () => {
 
                                 {/* Country Name */}
                                 <span className={`text-sm font-medium whitespace-nowrap transition-colors duration-300 ${activeCountry === country.id
-                                        ? 'text-white'
-                                        : 'text-gray-800'
+                                    ? 'text-white'
+                                    : 'text-gray-800'
                                     }`}>
                                     {country.name}
                                 </span>
@@ -168,12 +170,12 @@ export const BoxMap = () => {
                                                 <div className="flex justify-between items-center text-xs">
                                                     {country.employees && (
                                                         <span className="text-white/90">
-                                                            <span className="font-medium text-primary-foreground">{country.employees}</span> empleados
+                                                            <span className="font-medium text-primary-foreground">{country.employees}</span> {t('globalPresence.employees')}
                                                         </span>
                                                     )}
                                                     {country.established && (
                                                         <span className="text-white/70">
-                                                            Est. {country.established}
+                                                            {t('globalPresence.established')} {country.established}
                                                         </span>
                                                     )}
                                                 </div>

@@ -1,0 +1,110 @@
+{
+  "navigation": {
+    "home": "Home",
+    "marketplace": "Marketplace",
+    "ecosystem": "Ecosystem",
+    "howItWorks": "How It Works",
+    "partners": "Partners",
+    "contact": "Contact",
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
+  },
+  "hero": {
+    "title": "Invest in the real estate future",
+    "subtitle": "Real estate asset tokenization",
+    "description": "Access fractional real estate investment opportunities through blockchain. Invest from anywhere in the world with complete transparency and security.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "stats": {
+    "totalInvestment": "Total Investment",
+    "activeProjects": "Active Projects",
+    "investors": "Investors",
+    "averageReturn": "Average Return"
+  },
+  "globalPresence": {
+    "title": "Global Presence",
+    "subtitle": "Connecting the world through",
+    "tokenization": "tokenization",
+    "description": "Our global network allows us to offer tokenization solutions adapted to each local market, building bridges between blockchain innovation and the specific needs of each region.",
+    "countries": {
+      "mexico": "Mexico",
+      "colombia": "Colombia",
+      "ecuador": "Ecuador",
+      "peru": "Peru",
+      "argentina": "Argentina"
+    },
+    "employees": "employees",
+    "established": "Est."
+  },
+  "marketplace": {
+    "title": "Investment Marketplace",
+    "subtitle": "Discover unique opportunities",
+    "description": "Explore our curated selection of tokenized properties with high return potential.",
+    "viewAll": "View All",
+    "investNow": "Invest Now",
+    "roi": "ROI",
+    "minInvestment": "Min Investment",
+    "funded": "Funded"
+  },
+  "whyInvest": {
+    "title": "Why invest with us?",
+    "subtitle": "Competitive advantages",
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "Invest from $100 USD in premium properties that previously required millions."
+    },
+    "transparency": {
+      "title": "Total Transparency",
+      "description": "Blockchain ensures complete transparency in all transactions."
+    },
+    "liquidity": {
+      "title": "Enhanced Liquidity",
+      "description": "Tradeable tokens that offer greater liquidity than traditional real estate investment."
+    },
+    "diversification": {
+      "title": "Diversification",
+      "description": "Diversify your portfolio with real estate assets from different markets."
+    }
+  },
+  "objectives": {
+    "title": "Our Objectives",
+    "subtitle": "Transforming real estate investment",
+    "democratize": {
+      "title": "Democratize Access",
+      "description": "Make real estate investment accessible to everyone, regardless of initial capital."
+    },
+    "transparency": {
+      "title": "Ensure Transparency",
+      "description": "Use blockchain to provide complete transparency in all transactions."
+    },
+    "innovation": {
+      "title": "Drive Innovation",
+      "description": "Lead the digital transformation of the real estate sector with cutting-edge technology."
+    }
+  },
+  "testimonials": {
+    "title": "What our investors say",
+    "subtitle": "Real experiences from our community"
+  },
+  "partners": {
+    "title": "Our Partners",
+    "subtitle": "We collaborate with the best companies in the sector"
+  },
+  "finalCta": {
+    "title": "Start your investment journey today",
+    "subtitle": "Join thousands of investors who are already building their financial future",
+    "description": "Don't wait any longer to diversify your portfolio with tokenized real estate assets. The future of investment is here.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "footer": {
+    "description": "Leading platform in real estate asset tokenization. Invest in the future of real estate.",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "contact": "Contact",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "allRightsReserved": "All rights reserved"
+  }
+}

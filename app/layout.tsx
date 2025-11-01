@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import { I18nProvider } from "@/components/providers/i18n-provider"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -31,8 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Altoken - Inversión Inmobiliaria Tokenizada",
     description: "Plataforma de inversión inmobiliaria tokenizada",
-  },
-    generator: 'v0.app'
+  }
 }
 
 export default function RootLayout({
@@ -47,10 +47,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#1a5f7a" />
       </head>
       <body className={`font-sans antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
-        <Analytics />
+        <I18nProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <Analytics />
+        </I18nProvider>
       </body>
     </html>
   )

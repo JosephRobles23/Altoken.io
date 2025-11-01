@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { MapPin, Globe, Building2, Users, TrendingUp } from "lucide-react"
+import { useTranslation } from 'react-i18next'
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { BoxMap } from "@/components/ui/global-maps/global-maps"
 
@@ -21,6 +22,7 @@ export function GlobalPresenceSection() {
   const { ref, isVisible } = useScrollAnimation()
   const [activeLocation, setActiveLocation] = useState<string | null>(null)
   const [animationStep, setAnimationStep] = useState(0)
+  const { t } = useTranslation('common')
 
   const locations: OfficeLocation[] = [
     {
@@ -119,17 +121,15 @@ export function GlobalPresenceSection() {
           <div className={`${isVisible ? "fade-in-up" : "opacity-0 translate-y-8"} mb-12`}>
             <div className="mb-4">
               <span className="text-primary text-sm font-medium tracking-wider uppercase">
-                Presencia Global
+                {t('globalPresence.title')}
               </span>
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Conectando el mundo a través de la{" "}
-              <span className="text-primary">tokenización</span>.
+              {t('globalPresence.subtitle')}{" "}
+              <span className="text-primary">{t('globalPresence.tokenization')}</span>.
             </h2>
             <p className="text-lg text-gray-300 leading-relaxed">
-              Nuestra red global nos permite ofrecer soluciones de tokenización 
-              adaptadas a cada mercado local, construyendo puentes entre la innovación 
-              blockchain y las necesidades específicas de cada región.
+              {t('globalPresence.description')}
             </p>
           </div>
 
