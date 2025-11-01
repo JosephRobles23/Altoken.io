@@ -126,7 +126,7 @@ export function GlobalPresenceSection() {
         </div> */}
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Left Side - Location List */}
           <div className={`space-y-4 ${isVisible ? "slide-in-left" : "opacity-0 -translate-x-8"}`}>
             <h3 className="text-2xl font-bold text-foreground mb-6">Nuestras Oficinas</h3>
@@ -185,7 +185,7 @@ export function GlobalPresenceSection() {
 
           {/* Right Side - Interactive World Map */}
           <div className={`lg:col-span-2 ${isVisible ? "slide-in-right" : "opacity-0 translate-x-8"}`}>
-            <div className="relative w-full min-h-[400px] lg:min-h-[500px] mt-7">
+            <div className="relative w-full min-h-[400px] lg:min-h-[500px] mt-20">
               {/* Interactive Global Map */}
               <div className="relative w-full h-full">
                 <motion.div

@@ -104,13 +104,13 @@ export const BoxMap = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: index * 0.2, duration: 0.5 }}
                             onClick={() => setActiveCountry(activeCountry === country.id ? null : country.id)}
-                            whileHover={{ scale: 1.1 }}
+                            whileHover={{ scale: 1.1, zIndex: 50 }}
                             whileTap={{ scale: 0.95 }}
                         >
                             {/* Country Flag Container */}
                             <div className={`relative flex items-center gap-2 p-2 rounded-lg border-2 transition-all duration-300 z-20 ${activeCountry === country.id
                                 ? 'bg-primary/20 border-primary shadow-lg scale-110'
-                                : 'bg-white/90 border-white/50 hover:bg-white hover:border-primary/50 hover:shadow-md'
+                                : 'bg-white/90 border-white/50 hover:bg-white hover:border-primary/50 hover:shadow-md hover: z-20'
                                 }`}>
                                 {/* Flag */}
                                 <div className="relative w-8 h-8 rounded-full overflow-hidden border-2 border-white shadow-sm">
@@ -143,12 +143,12 @@ export const BoxMap = () => {
                             <AnimatePresence>
                                 {activeCountry === country.id && (
                                     <motion.div
-                                        initial={{ opacity: 0, y: 10, scale: 0.8 }}
+                                        initial={{ opacity: 0, y: -10, scale: 0.8 }}
                                         animate={{ opacity: 1, y: 0, scale: 1 }}
-                                        exit={{ opacity: 0, y: 10, scale: 0.8 }}
-                                        className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 z-50"
+                                        exit={{ opacity: 0, y: -10, scale: 0.8 }}
+                                        className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 z-50"
                                     >
-                                        <div className="bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg overflow-hidden shadow-xl">
+                                        <div className="bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg overflow-hidden shadow-xl z-50">
                                             {/* Office Image */}
                                             <div className="relative w-[280px] h-[180px]">
                                                 <Image
@@ -176,8 +176,8 @@ export const BoxMap = () => {
                                                 </div>
                                             </div>
 
-                                            {/* Arrow */}
-                                            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-gray-200 rotate-45"></div>
+                                            {/* Arrow pointing down */}
+                                            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-r border-b border-gray-200 rotate-45"></div>
                                         </div>
                                     </motion.div>
                                 )}
