@@ -93,175 +93,60 @@ export function GlobalPresenceSection() {
   ]
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-background via-muted/10 to-background">
-      <div className="section-container">
-        {/* Header */}
-        <div className={`text-center mb-16 ${isVisible ? "fade-in-up" : "opacity-0 translate-y-8"}`}>
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-            Presencia Global
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-5xl mx-auto leading-relaxed">
-            <strong className="text-primary">AlTOKEN.IO</strong> cuenta con presencia en gran parte de Latinoamérica, con oficinas estratégicamente ubicadas en la región.
-            Esta expansión nos permite tener una visión cercana del mercado local y fortalecer nuestro compromiso con la innovación en la tokenización de activos, mientras seguimos creciendo hacia nuevos territorios.
-          </p>
-        </div>
+    <section ref={ref} className="relative py-20 lg:py-20 overflow-hidden">
+      {/* Oblique Dark Background */}
+      <div 
+        className="absolute inset-0 transform origin-top-left scale-110" 
+        style={{ 
+          backgroundColor: '#28292a',
+          transform: 'skewY(-3deg) scale(1.1)'
+        }}
+      ></div>
+      
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }}></div>
+      </div>
 
-        {/* Stats Row */}
-        {/*  <div className={`grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 ${isVisible ? "fade-in-up" : "opacity-0 translate-y-8"}`}>
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              className="text-center p-6 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: index * 0.1 }}
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mx-auto mb-3">
-                {stat.icon}
-              </div>
-              <p className="text-2xl font-bold text-primary mb-1">{stat.value}</p>
-              <p className="text-sm text-muted-foreground">{stat.label}</p>
-            </motion.div>
-          ))}
-        </div> */}
-
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          {/* Left Side - Location List */}
-          <div className={`space-y-4 ${isVisible ? "slide-in-left" : "opacity-0 -translate-x-8"}`}>
-            <h3 className="text-2xl font-bold text-foreground mb-6">Nuestras Oficinas</h3>
-            {locations.map((location, index) => (
-              <motion.div
-                key={location.id}
-                className={`group cursor-pointer p-4 rounded-xl border transition-all duration-300 ${activeLocation === location.id || animationStep === index
-                  ? "border-primary/50 bg-primary/5 shadow-lg"
-                  : "border-border bg-card hover:border-primary/30 hover:shadow-md"
-                  }`}
-                onClick={() => setActiveLocation(activeLocation === location.id ? null : location.id)}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all ${activeLocation === location.id || animationStep === index
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-primary/10 text-primary"
-                    }`}>
-                    <MapPin size={20} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-foreground">{location.city}</h4>
-                    <p className="text-sm text-muted-foreground">{location.country}</p>
-                  </div>
-                  {location.employees && (
-                    <div className="text-right">
-                      <p className="text-sm font-medium text-primary">{location.employees}</p>
-                      <p className="text-xs text-muted-foreground">empleados</p>
-                    </div>
-                  )}
-                </div>
-
-                <AnimatePresence>
-                  {(activeLocation === location.id || animationStep === index) && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="mt-3 pt-3 border-t border-border/50"
-                    >
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {location.description}
-                      </p>
-                      {location.established && (
-                        <p className="text-xs text-primary mt-2">
-                          Establecida en {location.established}
-                        </p>
-                      )}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
+      <div className="relative z-10 section-container">
+        {/* Main Content Grid - Title Left, Map Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 items-center">
+          {/* Left Side - Header */}
+          <div className={`${isVisible ? "fade-in-up" : "opacity-0 translate-y-8"} mb-12`}>
+            <div className="mb-4">
+              <span className="text-primary text-sm font-medium tracking-wider uppercase">
+                Presencia Global
+              </span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              Conectando el mundo a través de la{" "}
+              <span className="text-primary">tokenización</span>.
+            </h2>
+            <p className="text-lg text-gray-300 leading-relaxed">
+              Nuestra red global nos permite ofrecer soluciones de tokenización 
+              adaptadas a cada mercado local, construyendo puentes entre la innovación 
+              blockchain y las necesidades específicas de cada región.
+            </p>
           </div>
 
           {/* Right Side - Interactive World Map */}
-          <div className={`lg:col-span-2 ${isVisible ? "slide-in-right" : "opacity-0 translate-x-8"}`}>
-            <div className="relative w-full min-h-[400px] lg:min-h-[500px] mt-20">
-              {/* Interactive Global Map */}
-              <div className="relative w-full h-full">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 1, delay: 0.5 }}
-                  className="relative w-full h-full"
-                >
-                  <BoxMap />
-                </motion.div>
-
-                {/* Floating Info Card */}
-                {/* <AnimatePresence>
-                  {activeLocation && (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.8, y: 20 }}
-                      className="absolute bottom-4 left-4 right-4 bg-card/95 backdrop-blur-sm border border-primary/30 rounded-lg p-4 shadow-lg z-10"
-                    >
-                      {(() => {
-                        const location = locations.find(l => l.id === activeLocation)
-                        return location ? (
-                          <div>
-                            <h4 className="font-semibold text-foreground mb-1">
-                              {location.city}, {location.country}
-                            </h4>
-                            <p className="text-sm text-muted-foreground mb-2">
-                              {location.description}
-                            </p>
-                            <div className="flex justify-between items-center text-xs">
-                              {location.employees && (
-                                <span className="text-primary font-medium">
-                                  {location.employees} empleados
-                                </span>
-                              )}
-                              {location.established && (
-                                <span className="text-muted-foreground">
-                                  Est. {location.established}
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                        ) : null
-                      })()}
-                    </motion.div>
-                  )}
-                </AnimatePresence> */}
-              </div>
+          <div className={`${isVisible ? "slide-in-right" : "opacity-0 translate-x-8"}`}>
+            <div className="relative w-full min-h-[400px] lg:min-h-[500px]">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="relative w-full h-full"
+              >
+                <BoxMap />
+              </motion.div>
             </div>
           </div>
         </div>
-
-        {/* Bottom CTA */}
-        {/* <motion.div
-          className={`mt-16 text-center ${isVisible ? "fade-in-up" : "opacity-0 translate-y-8"}`}
-          style={{ transitionDelay: "800ms" }}
-        >
-          <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10 border border-primary/20 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              Únete a Nuestra Red Global
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Forma parte de la revolución de la tokenización inmobiliaria.
-              Nuestro equipo global está listo para apoyarte en tu journey de inversión.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary px-8 py-3">
-                Contactar Oficina Local
-              </button>
-              <button className="btn-secondary px-8 py-3">
-                Ver Todas las Ubicaciones
-              </button>
-            </div>
-          </div>
-        </motion.div> */}
       </div>
     </section>
   )

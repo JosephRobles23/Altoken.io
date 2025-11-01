@@ -1,0 +1,34 @@
+{
+  "navigation": {
+    "home": "Home",
+    "marketplace": "Marketplace",
+    "ecosystem": "Ecosystem",
+    "howItWorks": "How It Works",
+    "partners": "Partners",
+    "contact": "Contact",
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
+  },
+  "globalPresence": {
+    "title": "Global Presence",
+    "subtitle": "Connecting the world through",
+    "tokenization": "tokenization",
+    "description": "Our global network allows us to offer tokenization solutions adapted to each local market, building bridges between blockchain innovation and the specific needs of each region.",
+    "countries": {
+      "mexico": "Mexico",
+      "colombia": "Colombia",
+      "ecuador": "Ecuador",
+      "peru": "Peru",
+      "argentina": "Argentina"
+    },
+    "employees": "employees",
+    "established": "Est."
+  },
+  "hero": {
+    "title": "Invest in the real estate future",
+    "subtitle": "Real estate asset tokenization",
+    "description": "Access fractional real estate investment opportunities through blockchain. Invest from anywhere in the world with complete transparency and security.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  }
+}

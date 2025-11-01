@@ -35,7 +35,7 @@ export const BoxMap = () => {
             name: "Ecuador",
             flag: ecuadorFlag,
             office: officeEcuador,
-            position: { top: "266px", left: "55px" },
+            position: { top: "305px", left: "25px" },
             employees: 28,
             established: "2021"
         },
@@ -44,7 +44,7 @@ export const BoxMap = () => {
             name: "Peru",
             flag: peruFlag,
             office: officePeru,
-            position: { top: "330px", left: "100px" },
+            position: { top: "370px", left: "80px" },
             employees: 45,
             established: "2020"
         },
@@ -53,7 +53,7 @@ export const BoxMap = () => {
             name: "Argentina",
             flag: argentinaFlag,
             office: officeArgentina,
-            position: { top: "350px", left: "265px" },
+            position: { top: "350px", left: "232px" },
             employees: 38,
             established: "2019"
         },
@@ -62,7 +62,7 @@ export const BoxMap = () => {
             name: "Mexico",
             flag: mexicoFlag,
             office: officeMexico,
-            position: { top: "160px", left: "43px" },
+            position: { top: "200px", left: "30px" },
             employees: 35,
             established: "2022"
         },
@@ -71,7 +71,7 @@ export const BoxMap = () => {
             name: "Colombia",
             flag: colombiaFlag,
             office: officeColombia,
-            position: { top: "210px", left: "195px" },
+            position: { top: "250px", left: "185px" },
             employees: 32,
             established: "2021"
         }
@@ -81,12 +81,12 @@ export const BoxMap = () => {
             {/* Map Container */}
             <div className="relative w-full h-full">
                 {/* Background Map */}
-                <div className="relative w-full h-full min-h-[400px] " style={{ aspectRatio: '782/447' }}>
+                <div className="relative w-full h-full min-h-[400px] min-w-[700px]" style={{ aspectRatio: '782/447' }}>
                     <Image
                         src={MapGlobal}
                         alt="Global Map"
                         fill
-                        className="object-cover"
+                        className="object-container mt-18"
                         priority
                     />
 
@@ -123,7 +123,10 @@ export const BoxMap = () => {
                                 </div>
 
                                 {/* Country Name */}
-                                <span className="text-sm font-medium text-gray-800 whitespace-nowrap">
+                                <span className={`text-sm font-medium whitespace-nowrap transition-colors duration-300 ${activeCountry === country.id
+                                        ? 'text-white'
+                                        : 'text-gray-800'
+                                    }`}>
                                     {country.name}
                                 </span>
 
