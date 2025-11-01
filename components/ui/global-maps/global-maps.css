@@ -1,0 +1,153 @@
+/* BoxMap Component Styles */
+.box-map-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  min-height: 400px;
+}
+
+.country-marker {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.country-marker:hover {
+  transform: scale(1.05);
+}
+
+.country-marker.active {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.country-flag {
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.country-tooltip {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Connection Lines Animation */
+.connection-line {
+  stroke-dasharray: 5, 5;
+  animation: dash 3s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+/* Floating Particles */
+.floating-particle {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translateY(-15px);
+    opacity: 0.8;
+  }
+}
+
+/* Pulse Effect */
+.pulse-effect {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .box-map-container {
+    padding: 0 1rem;
+  }
+
+  .country-marker {
+    transform: scale(0.9);
+  }
+
+  .country-marker:hover,
+  .country-marker.active {
+    transform: scale(1);
+  }
+
+  .country-tooltip {
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 640px) {
+  .country-marker {
+    transform: scale(0.8);
+  }
+
+  .country-tooltip {
+    min-width: 150px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .country-marker {
+    transform: scale(0.7);
+  }
+
+  .country-tooltip {
+    min-width: 120px;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+}
+
+/* Dark theme support */
+.dark .country-tooltip {
+  background: rgba(30, 41, 59, 0.95);
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  color: #f1f5f9;
+}
+
+.dark .country-marker {
+  background: rgba(30, 41, 59, 0.9);
+}
+
+/* Accessibility */
+.country-marker:focus {
+  outline: 2px solid rgb(59, 130, 246);
+  outline-offset: 2px;
+}
+
+.country-marker:focus-visible {
+  outline: 2px solid rgb(59, 130, 246);
+  outline-offset: 2px;
+}
